@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab选项卡</title>
+    <link rel="stylesheet" href="tab.css">
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script src="tab.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        body {
+            background: #323232;
+            font-size: 12px;
+            font-family: "微软雅黑";
+            padding: 100px
+        }
+    </style>
+</head>
+
+<body>
+    <!--人工配置参数-->
+    <div class="tab-view">
+        <p>1.没有配置任何参数</p>
+        <div class="js-tab tab">
+            <ul class="tab-nav">
+                <li class="actived"><a href="#">新闻</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">科技</a></li>
+            </ul>
+            <div class="content-wrap">
+                <div class="content-item current">
+                    <img src="images/tab1.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab2.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab3.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-view">
+        <p>2.触发事件click,切换效果为淡入淡出，3秒自动切换</p>
+        <div class="js-tab tab" data-config='{
+                                        "triggerType":"click",
+                                        "effect":"fade",
+                                        "invoke":2,
+                                        "auto":1000
+                                        }'>
+            <ul class="tab-nav">
+                <li class="actived"><a href="#">新闻</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">科技</a></li>
+            </ul>
+            <div class="content-wrap">
+                <div class="content-item current">
+                    <img src="images/tab1.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab2.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab3.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-view">
+        <p>3.默认显示哪一个tab内容</p>
+        <div class="js-tab tab" data-config='{
+                                        "invoke":2
+                                        }'>
+            <ul class="tab-nav">
+                <li class="actived"><a href="#">新闻</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">科技</a></li>
+            </ul>
+            <div class="content-wrap">
+                <div class="content-item current">
+                    <img src="images/tab1.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab2.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab3.jpg" alt="">
+                </div>
+                <div class="content-item">
+                    <img src="images/tab4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            // var tab = new Tab($('.js-tab').eq(0));
+            // var tab = new Tab($('.js-tab').eq(1));
+            // var tab = new Tab($('.js-tab').eq(2));
+
+            // Tab.init($(".js-tab"));
+            $(".js-tab").tab().css('backgroundColor','orange');
+        })
+    </script>
+</body>
+
+</html>
